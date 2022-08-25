@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // styles
 import './Navbar.css'
-import Temple from '../assets/temple.svg'
+import Logo from '../assets/logo.png'
 
 
 export default function Navbar() {
@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav className="navbar">
       <ul>
         <li className="logo">
-          <img src={Temple} alt="scarface logo" />
+          <img src={Logo} alt="scarface logo" />
           <span>The Scar Face</span>
         </li>
 
