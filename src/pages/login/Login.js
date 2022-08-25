@@ -1,10 +1,10 @@
-import './Create.css'
+import './Login.css'
 
 
-export default function Create() {
+export default function Login() {
   return (
     <div>
-      Create
+      Login
     </div>
   )
 }
