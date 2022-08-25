@@ -12,7 +12,7 @@ export default function Navbar() {
       <ul>
         <li className="logo">
           <img src={Logo} alt="scarface logo" />
-          <span>The Scar Face</span>
+          <span>Nancy App</span>
         </li>
 
         <li><Link to='./login'>Login</Link></li>
