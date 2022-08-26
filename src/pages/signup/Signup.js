@@ -9,8 +9,35 @@ export default function Signup() {
   const [thumbnail, setThumbnail] = useState(null)
 
   return (
-    <div>
-      Sign up
-    </div>
+    <form className="auth-form">
+      <h2>sign up</h2>
+      <label>
+        <span>Email:</span>
+        <input
+          required 
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </label>
+      <label>
+        <span>Password:</span>
+        <input
+          required 
+          type="passwrod"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </label>
+      <label>
+        <span>Display Name:</span>
+        <input
+          required 
+          type="text"
+          value={displayName}
+          onChange={(e) => setDisplayName(e.target.value)}
+        />
+      </label>
+    </form>
   )
 }
