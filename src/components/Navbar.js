@@ -23,6 +23,7 @@ export default function Navbar() {
         <li>
           {!isPending && <button className="btn" onClick={logout}>Logout</button>}
           {isPending && <button className="btn" disabled>Logging out</button>}
+          {error && <div className="error">{error}</div>}
         </li>
       </ul>
     </nav>
