@@ -5,7 +5,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 
 // styles
 import './Navbar.css'
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logos.png'
 
 
 export default function Navbar() {
