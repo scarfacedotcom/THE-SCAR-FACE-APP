@@ -11,10 +11,16 @@ export default function Create() {
   const [category, setCategory] = useState('')
   const [assignedUsers, setAssignedUsers] = useState([])
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    console.log(name,details,dueDate)
+  }
+
   return (
     <div className='create-form'>
       <h2 className="page-title">Create a New Project</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           <span>Project Name:</span>
           <input 
@@ -41,6 +47,12 @@ export default function Create() {
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)} 
           />
+        </label>
+        <label>
+          <span>Project Category</span>
+        </label>
+        <label>
+          <span>Assign to:</span>
         </label>
       </form>
     </div>
