@@ -26,12 +26,12 @@ export default function Create() {
         </label>
         <label>
           <span>Project Details:</span>
-          <input 
+          <textarea 
             required
             type="text"
             value={details}
             onChange={(e) => setDetails(e.target.value)} 
-          />
+          /><textarea/>
         </label>
         <label>
           <span>Due Date:</span>
