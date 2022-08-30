@@ -22,6 +22,7 @@ export default function Create() {
   const [dueDate, setDueDate] = useState('')
   const [category, setCategory] = useState('')
   const [assignedUsers, setAssignedUsers] = useState([])
+  const [formError, setFormError] = useState(null)
 
   useEffect(() => {
     if(documents) {
@@ -34,8 +35,19 @@ export default function Create() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setFormError(null)
 
-    console.log(name, details, dueDate)
+    if(!category) {
+      setFormError('Please Assign a Project Category')
+      return
+    }
+
+    if(assignedUsers.length < 1) {
+      setFormError('Please Assign users to this task')
+      return
+    }
+
+    console.log(name, details, dueDate, category.value, assignedUsers)
   }
 
   return (
