@@ -78,7 +78,9 @@ export default function Create() {
         <label>
           <span>Assign to:</span>
           <Select
+            onChange={(options) => setAssignedUsers(options)}
             options={users}
+            isMulti
           />
         </label>
 
