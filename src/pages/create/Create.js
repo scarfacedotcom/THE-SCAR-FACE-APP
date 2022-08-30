@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import Select from 'react-select'
+import { timestamp } from '../../firebase/config'
+import { useAuthContext } from '../../hooks/useAuthContext'
 import { useCollection } from '../../hooks/useCollection'
 
 // styles
@@ -15,6 +17,7 @@ const categories = [
 export default function Create() {
   const { documents } = useCollection('users')
   const [users, setUsers] = useState([])
+  const { user } = useAuthContext()
 
   // form field values
   const [name, setName] = useState('')
@@ -47,7 +50,31 @@ export default function Create() {
       return
     }
 
-    console.log(name, details, dueDate, category.value, assignedUsers)
+    const createdBy = {
+      name: user.name,
+      photoURL: user.photoURL,
+      id: user.uid
+    }
+
+    const assignedUsersList = assignedUsers.map((u) => {
+      return {
+        name: u.value.name,
+        photoURL: u.value.photoURL,
+        id: u.value.id
+      }
+    })
+
+    const project = {
+      name,
+      details,
+      category: category.value,
+      dueDate: timestamp.fromDate(new Date(dueDate)),
+      Comments: [],
+      createdBy,
+      assignedUsersList
+    }
+
+    console.log(project)
   }
 
   return (
