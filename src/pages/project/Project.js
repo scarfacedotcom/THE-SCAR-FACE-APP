@@ -6,6 +6,7 @@ import './Project.css'
 
 export default function Project() {
   const { id } = useParams()
+  const { document, error } = useDocument('projects',)
 
   if(error) {
     return <div className="error">{error}</div>
