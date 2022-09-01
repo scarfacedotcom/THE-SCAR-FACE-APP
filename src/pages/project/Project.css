@@ -37,9 +37,18 @@
   margin-top: 20px;
 }
 
-.project-summary li {
+/* .project-summary li {
   display: flex;
   align-items: flex-start;
   display: inline;
   margin: 5px;
+} */
+
+.project-comments label {
+  margin-bottom: 0px;
+}
+
+.project-comments textarea {
+  min-height: 40px;
+  font-size: 1.5em;
 }
