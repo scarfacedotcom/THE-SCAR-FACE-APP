@@ -21,6 +21,9 @@ export default function ProjectComments({project}) {
       await updateDocument(project.id, {
         comments: [...project.comments, commentToAdd]
       })
+      if(!response.error) {
+        setNewComment('')
+      }
   }
 
   return (
